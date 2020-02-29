@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css?family=Spartan&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Spartan', ;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: url(https://images.unsplash.com/photo-1552840687-b25e05d08047?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80);
+}
+.box {
+    width: 500px;
+    background-color: #ffffffd5;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 3px;
+    box-shadow: 5px 10px 5px #00000052;
+}
+.box .tool-box{
+    border-radius: 3px;
+    position: absolute;
+    top: -35px;
+    left: 3%;
+    display: flex;
+    flex-direction: row;
+}
+.box .tool-box ul{
+    background-color: #ffffffd5;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    box-shadow: 1px 2px 1px #00000055;
+    margin: 0 5px;
+}
+.box .tool-box ul li{
+    padding: 5px 10px;
+    transition: all .5s;
+}
+.box .tool-box ul li:hover{
+    background-color: #000;
+    color: white;
+}
+.b{font-weight: bold;}
+.i{font-style: italic;}
+.u{text-decoration: underline;}
+.s{text-decoration: line-through;}
+.add{
+    text-align: center;
+    padding: 5px;
+    transition: .5s;
+}
+.add:hover{background-color: #03a9f4;}
+.box .text{
+    padding: 0 10px;
+    overflow: hidden;
+}
+.box .text-box{
+    display: flex;
+    flex-direction: row;
+}
+.box textarea{
+    background-color: transparent;
+    padding: 10px 0 0 0;
+    border: none;
+    width: 100%;
+}
+.box .text-box span{
+    transition:all .5s;
+    align-self: center;
+    padding: 3px 5px 0 5px;
+    border-radius: 2px;
+}
+.box .text-box span:hover{
+    background-color: red;
+    color: white;
+}
+i{pointer-events: none;}
