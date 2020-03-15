@@ -52,24 +52,28 @@ body{
 .u{text-decoration: underline;}
 .s{text-decoration: line-through;}
 .add{
+    background-color: #ddd;
     text-align: center;
     padding: 5px;
     transition: .5s;
 }
 .add:hover{background-color: #03a9f4;}
 .box .text{
-    padding: 0 10px;
+    padding: 10px 20px;
     overflow: hidden;
 }
 .box .text-box{
     display: flex;
     flex-direction: row;
 }
-.box textarea{
+.box input[type="text"]{
     background-color: transparent;
     padding: 10px 0 0 0;
     border: none;
     width: 100%;
+}
+.box .text .text-box .input-link{
+    font-style: none;
 }
 .box .text-box span{
     transition:all .5s;
