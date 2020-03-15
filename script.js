@@ -2,40 +2,46 @@ const $ = document.querySelector.bind(document)
 // container com textos
 const divText = $('.text')
 
-// botão de adicionar
-const add = $('.add')
-
+// guardando ultimo input selecionado
+let lastInput
 // criando eventos dos botões
 $('.t').addEventListener('click', () => {
     if (!lastInput) return alert('Nenhum componente selecionado')
-    lastInput.style.fontSize = '25px'
+    if (lastInput.style.fontSize === '25px') lastInput.style.fontSize = '15px'
+    else lastInput.style.fontSize = '25px'
+
 })
 $('.b').addEventListener('click', () => {
     if (!lastInput) return alert('Nenhum componente selecionado')
-    lastInput.style.fontWeight = 'bold'
+    if (lastInput.style.fontWeight === 'bold') lastInput.style.fontWeight = ''
+    else lastInput.style.fontWeight = 'bold'
 })
 $('.i').addEventListener('click', () => {
     if (!lastInput) return alert('Nenhum componente selecionado')
-    lastInput.style.fontStyle = "italic"
+    if (lastInput.style.fontStyle === "italic") lastInput.style.fontStyle = ""
+    else lastInput.style.fontStyle = "italic"
 })
 $('.u').addEventListener('click', () => {
     if (!lastInput) return alert('Nenhum componente selecionado')
-    lastInput.style.textDecoration = "underline"
+    if (lastInput.style.textDecoration === "underline") {
+        lastInput.style.textDecoration = ''
+    }else  lastInput.style.textDecoration = 'underline'
 })
 $('.s').addEventListener('click', () => {
     if (!lastInput) return alert('Nenhum componente selecionado')
-    lastInput.style.textDecoration = "line-through"
+    if (lastInput.style.textDecoration === "line-through") {
+        lastInput.style.textDecoration = ''
+    }else  lastInput.style.textDecoration = 'line-through'
 })
 $('.link').addEventListener('click', () => {
     if (!lastInput) return alert('Nenhum componente selecionado')
     const domain = prompt("Digite o link do dominio que deseja redirecionar\n obs: incluindo o https://")
     if (!domain) return;
     const content = lastInput.value
-    console.log(content)
     const container = lastInput.parentElement
     lastInput.remove()
     const link = document.createElement('a')
-    link.setAttribute('href', domaoin)
+    link.setAttribute('href', domain)
     link.setAttribute('class', 'input-link')
     link.innerHTML = content
     container.insertAdjacentElement('afterbegin', link)
@@ -56,13 +62,8 @@ $('.justify').addEventListener('click', () => {
     if (!lastInput) return alert('Nenhum componente selecionado')
     lastInput.style.textAlign = 'justify'
 })
-// guardando ultimo input selecionado
-let lastInput
 
-add.addEventListener('click', handleNewText)
-document.addEventListener('keypress', shotcuts)
-
-function handleNewText () {
+$('.add').addEventListener('click', () => {
     const container = document.createElement('div')
     container.setAttribute('class', 'text-box')
 
@@ -79,10 +80,11 @@ function handleNewText () {
     container.appendChild(span)
 
     divText.appendChild(container) 
-}
+})
+document.addEventListener('keypress', event => console.log(event.key))
+
 function handleRemove (event) { 
     event.target.parentElement.remove()
     lastInput = null
 }
 function saveLastState (event) { lastInput = event.target }
-function shotcuts (event) { console.log(event.key) }

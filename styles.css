@@ -73,7 +73,9 @@ body{
     width: 100%;
 }
 .box .text .text-box .input-link{
-    font-style: none;
+    width: 95%;
+    text-decoration: none;
+    color: #03a9f4;
 }
 .box .text-box span{
     transition:all .5s;
